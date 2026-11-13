@@ -8,8 +8,7 @@ import type {
   OHLCVBar, ScannerRow, Signal, Stock,
 } from '../types';
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
-const MOCK_MODE = import.meta.env.VITE_MOCK_MODE === 'true';
+const BASE_URL = import.meta.env.VITE_API_URL ?? '/api';
 
 const http = axios.create({
   baseURL: BASE_URL,

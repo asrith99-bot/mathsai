@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    @apply bg-bg-primary text-white;
+    font-feature-settings: 'tnum' 1, 'ss01' 1;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #12121a; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3d; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6c63ff; }
+
+  /* Price blink animation */
+  @keyframes blinkGreen {
+    0%, 100% { background-color: transparent; }
+    50%       { background-color: rgba(0, 208, 132, 0.15); }
+  }
+  @keyframes blinkRed {
+    0%, 100% { background-color: transparent; }
+    50%       { background-color: rgba(255, 77, 77, 0.15); }
+  }
+  .blink-green { animation: blinkGreen 0.5s ease-in-out 2; }
+  .blink-red   { animation: blinkRed   0.5s ease-in-out 2; }
+}
+
+@layer utilities {
+  .font-tabular { font-variant-numeric: tabular-nums; }
+}
